@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="header">Welcome to EA23 Session</h1>
+    <div>
+        <h2>Q.No.1 Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h2>
+        <div class="output" id="Q1">Output :<pre>
+        Const Parent ={
+            Address : function(){
+                console.log("My Hometown is ${this.city} and House No is ${this.houseno}");
+            }
+        }
+        const child = Object.create(Parent)
+        child.city = "Bhopal"
+        child.houseno = "A/2 215"
+        child.Address()</pre>
+        </div>
+    </div>
+    <div>
+        <h2>Q.No.2 Write code to explain prototype chaining</h2>
+        <div class="output" id="Q2">Output :<pre>
+        const Address = {
+            Country : function(){
+                console.log("Hello I Live in India!!!")
+            }
+        }
+        
+        const SubAddress = Object.create(Address)
+        SubAddress.State = function(){
+                console.log("My City situated in Madhya Pradesh")
+        }
+        
+        const LivingCity = Object.create(SubAddress)
+        SubAddress.City = function(){
+                console.log("I live in Bhopal City!!!!!!!")
+        }
+        
+        const LivingHouse = Object.create(LivingCity)
+        SubAddress.House = function(){
+                console.log("My House No is A/2 215")
+        }
+        
+        LivingHouse.City()</pre>
+        </div>
+    </div>
+    <div>
+        <h2>Q.No.3 Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h2>
+        <div class="output" id="Q3">Output :<pre>
+            const Addition = {
+                Sum : function(arr){
+                        let sum = 0;
+                        arr.forEach((item)=>{
+                            sum += item
+                        })
+                        return sum
+                }
+            }
+            
+            Qno1 = Object.create(Addition)
+            Qno2 = Object.create(Addition)
+            
+            console.log(Qno1.Sum([5,4,3]))
+            console.log(Qno2.Sum([7,15,20,43]))</pre>
+        </div>
+    </div>
+    <div>
+        <h2>Q.No.4 Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h2>
+        <div class="output" id="Q4">Output :<pre></pre> </div>
+    </div>
+</body>
+</html>
