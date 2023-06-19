@@ -72,7 +72,15 @@
     </div>
     <div>
         <h2>Q.No.4 Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h2>
-        <div class="output" id="Q4">Output :<pre></pre> </div>
+        <div class="output" id="Q4">Output :<pre>
+            var myobj ={
+                name : "John",
+                batch : "EA18",
+                year : 2022,
+            }
+            let result = Object.keys(myobj);
+            console.log(result);
+        </pre> </div>
     </div>
 </body>
 </html>
